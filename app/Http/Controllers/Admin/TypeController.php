@@ -16,7 +16,9 @@ class TypeController extends Controller
      */
     public function index()
     {
-        return view('admin.types.index');
+        $types = Type::all();
+
+        return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -26,7 +28,9 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+       /*  $types = Type::orderByDesc('id')->get();
+
+        return view('admin.types.create', compact('types')); */
     }
 
     /**
@@ -37,7 +41,10 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        Type::create($request);
+        dd(Type::create($request));
+
+        return to_route('admin.types.index')->with('messagge', 'tutto ok 😉');
     }
 
     /**
