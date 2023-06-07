@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
@@ -16,7 +16,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.types.index');
     }
 
     /**
